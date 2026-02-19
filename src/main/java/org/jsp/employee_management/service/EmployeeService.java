@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.jsp.employee_management.dao.EmployeeDao;
 import org.jsp.employee_management.dto.Employee;
+import org.jsp.employee_management.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,14 +18,14 @@ public class EmployeeService {
 	public Employee addEmployee(Employee employee) {
 		
 		if(employeeDao.getEmployeeById(employee.getId()).isPresent()) {
-			throw new RuntimeException("User is already existed...");
+			throw new ResourceNotFoundException("User is already existed...");
 		}
 		return employeeDao.addEmployee(employee);
 	}
 	
 	public Employee getEmployeeById(int id){
 		Optional<Employee> emp = employeeDao.getEmployeeById(id);
-		Employee employee = emp.orElseThrow(() -> new RuntimeException());
+		Employee employee = emp.orElseThrow(() -> new ResourceNotFoundException("Employee Not available with given id..."));
 		
 		return employee;
 	}
@@ -46,7 +47,7 @@ public class EmployeeService {
 	}
 	public List<Employee> searchByName(String name){
 		if(employeeDao.searchByName(name).isEmpty()) {
-			throw new RuntimeException("Searched name is not available...");
+			throw new ResourceNotFoundException("Searched name is not available...");
 		}
 		return employeeDao.searchByName(name);
 	}
