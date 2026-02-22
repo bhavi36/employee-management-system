@@ -1,35 +1,40 @@
-Bank Management System (JDBC Project)
-This is a simple console-based Bank Management System built using Core Java and JDBC.  
-The project demonstrates basic banking operations like registration, login, deposit, withdrawal, and transaction history.
+# Employee Management System
+### The Employee Management System is a backend application developed using Spring Boot. It provides RESTful APIs to perform CRUD operations on employee data.
 
-This project helped me understand how Java interacts with a database and how to structure a real-world application using layers.
+This project is designed to demonstrate basic concepts of Spring Boot, layered architecture, and database interaction.
 
-Features
---------
--> Customer
-  -Register new account
-  -Login using email/mobile & PIN
-  -Check balance
-  -Deposit money
-  -Withdraw money
-  -view transaction history
 
--> Admin
-  -Admin login
-  -View All customers
-  -Delete customer account
 
-Concepts Used
--------------
-- Core Java
-- JDBC (Java DataBase Connectivity)
-- OOPs
-- Exception Handling
-- Layered Architecture
+### -> Features
 
-Technologies Used
------------------
-- Java
-- JDBC
-- MySQL
-- Eclipse IDE
+  * Add new employee details
+  * View all employees
+  * Get employee by ID
+  * Update employee information
+  * Delete employee
+  * Exception handling for invalid data
+
+### -> Technologies Used
+
+  * Java
+  * Spring Boot
+  * Spring Data JPA
+  * Hibernate
+  * MySQL
+  * Maven
+
+
+### -> Learning Outcomes
+
+  * Understanding of Spring Boot architecture
+  * REST API development
+  * Database integration using JPA
+  * Exception handling
+  * Layered architecture (Controller, Service, DAO)
+
+### -> Future Enhancements
+
+  * Add validation (Hibernate Validator)
+  * Add Swagger for API documentation
+  * Add authentication (Spring Security)
+  * Frontend integration
